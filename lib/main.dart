@@ -1,3 +1,5 @@
+import 'package:bloc_pattern/api_page.dart';
+import 'package:bloc_pattern/bloc/api_bloc.dart';
 import 'package:bloc_pattern/bloc/counter_bloc.dart';
 import 'package:bloc_pattern/counter_page.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: BlocProvider(
-        create: (_) => CounterBloc(),
-        child: const CounterPage(),
+        create: (_) => ApiBloc(),
+        child: const ApiPage(),
       ),
     );
   }
