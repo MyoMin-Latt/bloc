@@ -16,5 +16,6 @@ class ApiBloc extends Bloc<ApiEvent, ApiState> {
         emit(ApiError());
       }
     });
+    on<refreshApiEvent>(((event, emit) => emit(ApiInitial())));
   }
 }

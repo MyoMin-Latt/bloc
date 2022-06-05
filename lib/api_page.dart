@@ -10,6 +10,16 @@ class ApiPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final _apiBloc = BlocProvider.of<ApiBloc>(context);
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(' Network call with BLOC'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                _apiBloc.add(refreshApiEvent());
+              },
+              icon: const Icon(Icons.refresh))
+        ],
+      ),
       body: BlocBuilder<ApiBloc, ApiState>(
         builder: (context, state) {
           if (state is ApiLoading) {
