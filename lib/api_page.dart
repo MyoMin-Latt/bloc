@@ -14,10 +14,11 @@ class ApiPage extends StatelessWidget {
         title: const Text(' Network call with BLOC'),
         actions: [
           IconButton(
-              onPressed: () {
-                _apiBloc.add(refreshApiEvent());
-              },
-              icon: const Icon(Icons.refresh))
+            onPressed: () {
+              _apiBloc.add(refreshApiEvent());
+            },
+            icon: const Icon(Icons.refresh),
+          ),
         ],
       ),
       body: BlocBuilder<ApiBloc, ApiState>(
